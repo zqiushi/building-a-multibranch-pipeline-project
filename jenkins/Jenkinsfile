@@ -19,6 +19,16 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
+
+        stage('Image') {
+            steps {
+                sh 'docker build -t testimga:v1.1.1'
+            }
+        }
+
+       
+
+
         stage('Deliver for development') {
             when {
                 branch 'development'
