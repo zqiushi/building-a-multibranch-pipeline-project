@@ -12,7 +12,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+		sh 'npm install webpack-dev-server -g --registry=https://registry.npm.taobao.org'
                 sh 'npm install --registry=https://registry.npm.taobao.org'
+		   
             }
         }
         stage('Test'){
